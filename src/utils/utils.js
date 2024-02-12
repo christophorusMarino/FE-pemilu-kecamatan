@@ -1,0 +1,1 @@
+export const isUndefined = (s) => typeof s === "undefined";

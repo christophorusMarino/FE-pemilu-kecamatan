@@ -7,8 +7,28 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'login',
+    component: () => import('../views/LoginPage.vue')
+  },
+  {
+    path: '/absensi',
+    name: 'absensi',
+    component: () => import('../views/Absensi.vue')
+  },
+  {
+    path: '/dpr_ri',
+    name: 'dpr_ri',
+    component: () => import('../views/DprRi.vue')
+  },
+  {
+    path: '/dprd_prov',
+    name: 'dprd_prov',
+    component: () => import('../views/DprdProv.vue')
+  },
+  {
+    path: '/dprd_kota_kab',
+    name: 'dprd_kota_kab',
+    component: () => import('../views/DprdKota.vue')
   },
   {
     path: '/about',
@@ -21,6 +41,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // mode: 'history',
+  // base: process.env.BASE_URL,
   routes
 })
 
