@@ -106,14 +106,20 @@ export default {
       if (this.valid) {
         this.postLogin({ token: this.token })
           .then((response) => {
-            if (response.absensi) {
-              this.$router.replace({
-                name: "dpr_ri",
-              });
+            if (response.role === "CAMAT") {
+              if (response.absensi) {
+                this.$router.replace({
+                  name: "dpr_ri",
+                });
+              } else {
+                this.$router.replace({
+                  name: "absensi",
+                });
+              }
             } else {
-              this.$router.replace({
-                name: "absensi",
-              });
+              this.textSnackbar = "Anda Tidak Dapat Mengakses Halaman Ini";
+              this.colorSnackbar = "error";
+              this.alertSnackbar = true;
             }
           })
           .catch((e) => {
