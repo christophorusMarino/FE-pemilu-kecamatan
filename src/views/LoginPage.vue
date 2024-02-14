@@ -117,7 +117,7 @@ export default {
                 });
               }
             } else {
-              this.textSnackbar = "Anda Tidak Dapat Mengakses Halaman Ini";
+              this.textSnackbar = "Anda Tidak Dapat Mengakses Halaman Ini !";
               this.colorSnackbar = "error";
               this.alertSnackbar = true;
             }
