@@ -106,7 +106,7 @@
                                 solo
                                 :hint="resolveHint(index, idx)"
                                 persistent-hint
-                                :rules="[rules.required, rules.max]"
+                                :rules="[rules.required]"
                                 type="number"
                                 @keypress="
                                   (e) => {
@@ -218,8 +218,7 @@ export default {
     document,
     valid: false,
     rules: {
-      required: (v) => !!v || "Tidak boleh kosong !!",
-      max: (v) => v <= 350 || "!! Maksimal 350 suara !!",
+      required: (v) => !!v || "Tidak boleh kosong !!"
     },
     publicPathPartai: "img/partai/",
     publicPathCaleg: "img/caleg/",
